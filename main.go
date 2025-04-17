@@ -65,6 +65,22 @@ func main() {
 		if err != nil {
 			fmt.Println("Error deleting task:", err)
 		}
+	case "filter":
+		filter := ""
+		if len(arg) > 2 {
+			filter = arg[2]
+			err := ListFilteredTasks(filter)
+			if err != nil {
+				fmt.Println("Error listing filtered tasks:", err)
+			}
+			return
+		}
+
+		err := ListTasks()
+		if err != nil {
+			fmt.Println("Error listing tasks:", err)
+		}
+
 	default:
 		fmt.Printf("Unknown command: %s\n", command)
 		fmt.Println("Available commands: add")

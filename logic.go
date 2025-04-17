@@ -149,3 +149,32 @@ func DeleteTask(index int) error {
 	fmt.Printf("🗑️ Task %d deleted!\n", index)
 	return nil
 }
+
+func ListFilteredTasks(filter string) error {
+	tasks, err := LoadTasks()
+	if err != nil {
+		return err
+	}
+
+	if len(tasks) == 0 {
+		fmt.Println("No tasks yet!")
+		return nil
+	}
+
+	for i, task := range tasks {
+		if filter == "done" && !task.Done {
+			continue
+		}
+		if filter == "pending" && task.Done {
+			continue
+		}
+
+		status := "PENDING"
+		if task.Done {
+			status = "DONE   "
+		}
+		fmt.Printf("%d. %-8s %s\n", i+1, status, task.Text)
+	}
+
+	return nil
+}
