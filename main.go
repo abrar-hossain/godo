@@ -29,7 +29,7 @@ func main() {
 		if err != nil {
 			fmt.Println("Error adding task:", err)
 		} else {
-			fmt.Println("Task added successfully ✅")
+			fmt.Println("Task added successfully")
 		}
 	case "list":
 		err := ListTasks()
