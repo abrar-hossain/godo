@@ -1,40 +1,57 @@
-# godo - A CLI Todo App in Go 🐹✅
+# godo - A CLI Todo App in Go
 
 `godo` is a command-line todo list manager written in Go.  
-It helps you stay organized by allowing you to **add, view, complete, and delete tasks** right from your terminal.
+It provides the ability to add, view, complete, and delete tasks directly from the terminal.
 
-Tasks are saved in a local JSON file, so your list persists even after you quit.
-
----
-
-## ✨ Features
-
-- ➕ Add tasks with a single command
-- 📋 List all tasks with status indicators
-- ✅ Mark tasks as done
-- ❌ Delete completed or unwanted tasks
-- 🧹 Clear the entire list
-- 🧪 Unit tested with `go test`
-- 💾 Tasks stored locally in `todos.json`
+Tasks are saved in a local JSON file, ensuring the list persists even after closing the program.
 
 ---
 
-## ⚙️ How It Works
+## Features
 
-Each time you run `godo`, it:
+- Add tasks with a single command
+- List all tasks with status indicators (done or pending)
+- Mark tasks as done
+- Delete specific tasks
+- Clear the entire task list
+- Unit tested using Go's testing framework
+- Data stored locally in `todos.json`
 
-1. Parses your command (`add`, `list`, `done`, `delete`, etc.)
-2. Loads tasks from `todos.json`
-3. Applies the action
+---
+
+## How It Works
+
+Each time the program is run, it performs the following steps:
+
+1. Parses the command (`add`, `list`, `done`, `delete`, etc.)
+2. Loads the task list from `todos.json`
+3. Applies the requested action
 4. Saves the updated list back to the file
 
 ---
 
-## 🧭 Flowchart
+## Flowchart
 
-This visual explains the logic of the app:
+This diagram illustrates the logic of the application:
 
 ![CLI Todo Flowchart](flowchart.png)
 
 ---
+
+## What I Learned
+
+This project provided practical experience with core concepts in Go, including:
+
+- Memory management through slices and byte arrays
+- Command-line argument parsing using `os.Args`
+- JSON encoding and decoding using `encoding/json`
+- Organizing and modularizing a Go project
+- Writing unit tests using table-driven testing
+- Understanding Go's performance model and why it is fast
+- Building tools from scratch using only the standard library
+
+The experience helped solidify understanding of Go's simplicity, power, and efficiency.
+
+---
+
 
